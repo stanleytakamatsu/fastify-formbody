@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "fastify-plugin": "^1.0.0",
-    "qs": "^6.5.1"
+    "query-string-parser": "^0.2.3"
   },
   "types": "formbody.d.ts"
 }

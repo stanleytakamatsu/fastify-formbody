@@ -1,13 +1,13 @@
 'use strict'
 
 const fp = require('fastify-plugin')
-const qs = require('qs')
+const qs = require('query-string-parser')
 
 function formBodyPlugin (fastify, options, next) {
   const opts = Object.assign({}, options || {})
 
   function contentParser (req, body, done) {
-    done(null, qs.parse(body.toString()))
+    done(null, qs.parseQuery(body.toString()))
   }
 
   fastify.addContentTypeParser(
